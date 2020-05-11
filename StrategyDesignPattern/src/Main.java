@@ -1,4 +1,3 @@
-package cn.neilz.designPatterns.strategyDesignPattern;
 
 public class Main {
 

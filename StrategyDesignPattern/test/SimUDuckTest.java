@@ -1,10 +1,10 @@
-package cn.neilz.designPatterns.strategyDesignPattern;
 
-import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.Duck;
-import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.MallardDuck;
-import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.RedheadDuck;
-import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.RubberDuck;
+import SimUDuck.Duck;
+import SimUDuck.MallardDuck;
+import SimUDuck.RedheadDuck;
+import SimUDuck.RubberDuck;
 import org.junit.Test;
+
 
 /**
  * @author neilz

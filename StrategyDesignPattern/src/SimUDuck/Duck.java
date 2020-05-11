@@ -1,4 +1,4 @@
-package cn.neilz.designPatterns.strategyDesignPattern.SimUDuck;
+package SimUDuck;
 
 /**
  * 鸭子行为父类
