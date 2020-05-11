@@ -1,4 +1,4 @@
-package SimUDuck;
+package strategydesignpattern.simuduck.extend;
 
 /**
  * @author neilz
