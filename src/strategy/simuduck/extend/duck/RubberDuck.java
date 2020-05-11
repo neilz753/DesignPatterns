@@ -1,4 +1,6 @@
-package strategydesignpattern.simuduck.iface;
+package strategy.simuduck.extend.duck;
+
+import strategy.simuduck.extend.Duck;
 
 /**
  * 橡皮鸭
@@ -6,13 +8,7 @@ package strategydesignpattern.simuduck.iface;
  * @author neilz
  * @create 2020/5/11 16:08
  */
-public class RubberDuck extends IDuck implements Flyable{
-
-    public RubberDuck(){
-        super();
-        fly();
-    }
-
+public class RubberDuck extends Duck {
     @Override
     public void display() {
         System.out.println("外观橡皮鸭");

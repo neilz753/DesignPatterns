@@ -1,4 +1,4 @@
-package strategydesignpattern.simuduck.extend;
+package strategy.simuduck.extend;
 
 /**
  * 鸭子行为父类

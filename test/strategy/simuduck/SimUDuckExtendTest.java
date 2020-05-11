@@ -1,10 +1,10 @@
-package strategydesignpattern.simuduck;
+package strategy.simuduck;
 
 import org.junit.Test;
-import strategydesignpattern.simuduck.extend.Duck;
-import strategydesignpattern.simuduck.extend.MallardDuck;
-import strategydesignpattern.simuduck.extend.RedheadDuck;
-import strategydesignpattern.simuduck.extend.RubberDuck;
+import strategy.simuduck.extend.Duck;
+import strategy.simuduck.extend.duck.MallardDuck;
+import strategy.simuduck.extend.duck.RedheadDuck;
+import strategy.simuduck.extend.duck.RubberDuck;
 
 /**
  * @author neilz

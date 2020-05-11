@@ -1,10 +1,11 @@
-package strategydesignpattern.simuduck;
+package strategy.simuduck;
 
-import strategydesignpattern.simuduck.iface.IDuck;
-import strategydesignpattern.simuduck.iface.MallardDuck;
-import strategydesignpattern.simuduck.iface.RedheadDuck;
-import strategydesignpattern.simuduck.iface.RubberDuck;
+import strategy.simuduck.iface.*;
 import org.junit.Test;
+import strategy.simuduck.iface.duck.DecoyDuck;
+import strategy.simuduck.iface.duck.MallardDuck;
+import strategy.simuduck.iface.duck.RedheadDuck;
+import strategy.simuduck.iface.duck.RubberDuck;
 
 /**
  * @author neilz
@@ -12,7 +13,7 @@ import org.junit.Test;
  */
 public class SimUDuckInterfaceTest {
     @Test
-    public void run_Duck(){
+    public void run_IDuck(){
         new IDuck();
     }
 
@@ -30,4 +31,10 @@ public class SimUDuckInterfaceTest {
     public void run_rubberDuck(){
         new RubberDuck();
     }
+
+    @Test
+    public void run_decoyDuck(){
+        new DecoyDuck();
+    }
+
 }

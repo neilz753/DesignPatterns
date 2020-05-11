@@ -25,3 +25,6 @@ hs_err_pid*
 # Others
 .idea/
 *.iml
+target/classes/META-INF/DesignPatterns.kotlin_module
+target/classes/strategy/1.设计模式入门-策略模式.md
+target/test-classes/META-INF/DesignPatterns.kotlin_module
