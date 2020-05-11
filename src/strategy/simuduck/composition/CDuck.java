@@ -5,12 +5,10 @@ package strategy.simuduck.composition;
  * @create 2020/5/11 20:15
  */
 public class CDuck {
-    protected FlyBehavior flyBehavior;
-    protected QuackBehavior quackBehavior;
+    public FlyBehavior flyBehavior;
+    public QuackBehavior quackBehavior;
 
     public CDuck(){
-        performQuack();
-        performFly();
         swim();
         display();
     }
@@ -21,6 +19,14 @@ public class CDuck {
 
     public void performFly(){
         flyBehavior.fly();
+    }
+
+    public void setFlyBehavior(FlyBehavior fb) {
+        flyBehavior = fb;
+    }
+
+    public void setQuackBehavior(QuackBehavior qb) {
+        quackBehavior = qb;
     }
 
     /**

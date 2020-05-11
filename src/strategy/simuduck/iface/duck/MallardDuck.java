@@ -11,7 +11,6 @@ import strategy.simuduck.iface.Quackable;
 public class MallardDuck extends IDuck implements Flyable, Quackable {
 
     public MallardDuck(){
-        super();
         quack();
         fly();
     }

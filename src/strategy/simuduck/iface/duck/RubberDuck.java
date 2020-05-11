@@ -12,7 +12,6 @@ import strategy.simuduck.iface.Quackable;
 public class RubberDuck extends IDuck implements Quackable {
 
     public RubberDuck(){
-        super();
         quack();
     }
 

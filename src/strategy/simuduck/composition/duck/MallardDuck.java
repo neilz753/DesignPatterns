@@ -14,9 +14,8 @@ public class MallardDuck extends CDuck {
      * 绿头鸭 呱呱叫 会飞
      */
     public MallardDuck() {
-//        quackBehavior = new Quack();
-//        flyBehavior = new FlyWithWings();
-        display();
+        quackBehavior = new Quack();
+        flyBehavior = new FlyWithWings();
     }
 
     @Override
