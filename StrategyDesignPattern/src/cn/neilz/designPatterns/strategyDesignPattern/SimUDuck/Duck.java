@@ -12,6 +12,7 @@ public class Duck {
         quack();
         swim();
         display();
+        fly();
     }
 
     /**
@@ -33,6 +34,13 @@ public class Duck {
      */
     public void display(){
         System.out.println("默认小黄鸭");
+    }
+
+    /**
+     * 是否会飞
+     */
+    public void fly(){
+        System.out.println("默认会飞");
     }
 
 }

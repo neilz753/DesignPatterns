@@ -3,6 +3,7 @@ package cn.neilz.designPatterns.strategyDesignPattern;
 import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.Duck;
 import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.MallardDuck;
 import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.RedheadDuck;
+import cn.neilz.designPatterns.strategyDesignPattern.SimUDuck.RubberDuck;
 import org.junit.Test;
 
 /**
@@ -24,6 +25,11 @@ public class SimUDuckTest {
     @Test
     public void run_redheadDuck(){
         new RedheadDuck();
+    }
+
+    @Test
+    public void run_rubberDuck(){
+        new RubberDuck();
     }
 
 }
