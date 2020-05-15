@@ -21,16 +21,16 @@ public class Sorter {
         ISortAlg sortAlg;
         // [0, 6GB)
         if (fileSize < 6 * GB) {
-            sortAlg = new QuickSort();
+            sortAlg = SortAlgFactory.getSortAlg("QuickSort");
         } // [6GB, 10GB)
         else if (fileSize < 10 * GB) {
-            sortAlg = new ExternalSort();
+            sortAlg = SortAlgFactory.getSortAlg("ExternalSort");
         } // [10GB, 100GB)
         else if (fileSize < 100 * GB) {
-            sortAlg = new ConcurrentExternalSort();
+            sortAlg = SortAlgFactory.getSortAlg("ConcurrentExternalSort");
         } // [100GB, ~)
         else {
-            sortAlg = new MapReduceSort();
+            sortAlg = SortAlgFactory.getSortAlg("MapReduceSort");
         }
         sortAlg.sort(filePath);
     }
