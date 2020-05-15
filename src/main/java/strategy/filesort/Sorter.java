@@ -1,11 +1,10 @@
 package strategy.filesort;
 
-import strategy.filesort.impl.ConcurrentExternalSort;
-import strategy.filesort.impl.ExternalSort;
-import strategy.filesort.impl.MapReduceSort;
-import strategy.filesort.impl.QuickSort;
+import strategy.filesort.AlgRange;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author neilz
@@ -13,26 +12,26 @@ import java.io.File;
  */
 public class Sorter {
     private static final long GB = 1000 * 1000 * 1000;
+    private static final List<AlgRange> algs = new ArrayList<>();
+
+    static {
+        algs.add(new AlgRange(0, 6 * GB, SortAlgFactory.getSortAlg("QuickSort")));
+        algs.add(new AlgRange(6 * GB, 10 * GB, SortAlgFactory.getSortAlg("ExternalSort")));
+        algs.add(new AlgRange(10 * GB, 100 * GB, SortAlgFactory.getSortAlg("ConcurrentExternalSort")));
+        algs.add(new AlgRange(100 * GB, Long.MAX_VALUE, SortAlgFactory.getSortAlg("MapReduceSort")));
+    }
 
     public void sortFile(String filePath) {
         // 省略校验逻辑
         File file = new File(filePath);
         long fileSize = file.length();
-        ISortAlg sortAlg;
-        // [0, 6GB)
-        if (fileSize < 6 * GB) {
-            sortAlg = SortAlgFactory.getSortAlg("QuickSort");
-        } // [6GB, 10GB)
-        else if (fileSize < 10 * GB) {
-            sortAlg = SortAlgFactory.getSortAlg("ExternalSort");
-        } // [10GB, 100GB)
-        else if (fileSize < 100 * GB) {
-            sortAlg = SortAlgFactory.getSortAlg("ConcurrentExternalSort");
-        } // [100GB, ~)
-        else {
-            sortAlg = SortAlgFactory.getSortAlg("MapReduceSort");
+        ISortAlg sortAlg = null;
+        for (AlgRange algRange : algs) {
+            if (algRange.inRange(fileSize)) {
+                sortAlg = algRange.getAlg(); break;
+            }
         }
         sortAlg.sort(filePath);
     }
 
-}
+    }
