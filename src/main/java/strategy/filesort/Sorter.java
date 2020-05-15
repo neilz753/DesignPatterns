@@ -18,37 +18,21 @@ public class Sorter {
         // 省略校验逻辑
         File file = new File(filePath);
         long fileSize = file.length();
+        ISortAlg sortAlg;
         // [0, 6GB)
         if (fileSize < 6 * GB) {
-            quickSort(filePath);
+            sortAlg = new QuickSort();
         } // [6GB, 10GB)
         else if (fileSize < 10 * GB) {
-            externalSort(filePath);
+            sortAlg = new ExternalSort();
         } // [10GB, 100GB)
         else if (fileSize < 100 * GB) {
-            concurrentExternalSort(filePath);
+            sortAlg = new ConcurrentExternalSort();
         } // [100GB, ~)
         else {
-            mapreduceSort(filePath);
+            sortAlg = new MapReduceSort();
         }
-    }
-    
-    private void quickSort(String filePath) {
+        sortAlg.sort(filePath);
     }
 
-    private void externalSort(String filePath) {
-    }
-
-    private void concurrentExternalSort(String filePath) {
-    }
-
-    private void mapreduceSort(String filePath) {
-    }
-}
-
-class SortingTool {
-    public static void main(String[] args) {
-        Sorter sorter = new Sorter();
-        sorter.sortFile(args[0]);
-    }
 }
