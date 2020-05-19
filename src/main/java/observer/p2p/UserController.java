@@ -4,6 +4,7 @@ import observer.p2p.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
 
 /**
  * 开发一个 P2P 投资理财系统，用户注册成功之后，我们会给用户发放投资体验金。
@@ -15,6 +16,11 @@ public class UserController {
     // 依赖注入
     private UserService userService;
     private List<RegObserver> regObservers = new ArrayList<>();
+    private Executor executor;
+
+    public UserController() {
+        this.executor = executor;
+    }
 
     /**
      * 一次性设置好，之后也不可能动态的修改
@@ -36,7 +42,12 @@ public class UserController {
         long userId = userService.register(telephone, password);
 
         for (RegObserver observer : regObservers) {
-            observer.handleRegSuccess(userId);
+            executor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    observer.handleRegSuccess(userId);
+                }
+            });
         }
 
         return userId;
