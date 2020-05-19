@@ -1,5 +1,7 @@
 package observer.p2p;
 
+import observer.p2p.service.UserService;
+
 import java.util.ArrayList;
 import java.util.List;
 
