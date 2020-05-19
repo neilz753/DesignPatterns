@@ -1,5 +1,6 @@
 package observer.p2p.impl;
 
+import com.google.common.eventbus.Subscribe;
 import observer.p2p.service.PromotionService;
 import observer.p2p.RegObserver;
 
@@ -13,6 +14,7 @@ public class RegPromotionObserver implements RegObserver {
     private PromotionService promotionService;
 
     @Override
+    @Subscribe
     public void handleRegSuccess(long userId) {
         promotionService.issueNewUserExperienceCash(userId);
     }

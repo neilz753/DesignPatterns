@@ -1,5 +1,6 @@
 package observer.p2p.impl;
 
+import com.google.common.eventbus.Subscribe;
 import observer.p2p.service.NotificationService;
 import observer.p2p.RegObserver;
 
@@ -13,6 +14,7 @@ public class RegNotificationObserver implements RegObserver {
     private NotificationService notificationService;
 
     @Override
+    @Subscribe
     public void handleRegSuccess(long userId) {
         notificationService.sendInboxMessage(userId, "Welcome...");
     }
