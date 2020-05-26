@@ -1,5 +1,16 @@
-# 设计模式学习
+# 学习参考
+
+[《Head First Design Patterns》](https://learning.oreilly.com/library/view/head-first-design/0596007124/)
+
+[极客时间《设计模式之美》](https://time.geekbang.org/column/intro/250)
+
+
+
+# 设计模式分类
+
 我们常把 23 种经典的设计模式分为三类：创建型、结构型、行为型。
+
+设计模式要干的事情就是解耦，创建型模式是将创建和使用代码解耦，结构型模式是将不同功能代码解耦，行为型模式是将不同的行为代码解耦
 
 ## 创建型
 
@@ -11,7 +22,7 @@
 
 结构型设计模式主要解决“类或对象的组合或组装”问题。
 
-代理模式、桥接模式、[装饰者模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/decorator/装饰者模式.md)、适配器模式、门面模式、组合模式、享元模式
+代理模式、桥接模式、[装饰者模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/decorator/装饰者模式.md)、[适配器模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/adapterandfacade/适配器和外观模式.md)、[门面模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/adapterandfacade/适配器和外观模式.md)、组合模式、享元模式
 
 ## 行为型
 
