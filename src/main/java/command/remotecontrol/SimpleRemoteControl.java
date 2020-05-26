@@ -1,7 +1,7 @@
 package command.remotecontrol;
 
 /**
- * 遥控器
+ * 简易遥控器
  *
  * @author neilz
  * @create 2020/5/25 16:08

@@ -1,4 +1,7 @@
-package command.remotecontrol;
+package command.remotecontrol.impl;
+
+import command.remotecontrol.Command;
+import command.remotecontrol.furniture.GarageDoor;
 
 /**
  * @author neilz
