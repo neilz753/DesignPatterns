@@ -1,9 +1,6 @@
 package command.remotecontrol;
 
-import command.remotecontrol.furniture.GarageDoor;
-import command.remotecontrol.furniture.CeilingFan;
-import command.remotecontrol.furniture.Light;
-import command.remotecontrol.furniture.Stereo;
+import command.remotecontrol.furniture.*;
 import command.remotecontrol.impl.*;
 import org.junit.Test;
 
@@ -135,6 +132,41 @@ public class RemoteControlTest {
         remoteControl.onButtonWasPushed(1);
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
+    }
+
+    @Test
+    public void run_macroCommandTest() {
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+
+        Light light = new Light("Living Room");
+        TV tv = new TV("Living Room");
+        Stereo stereo = new Stereo("Living Room");
+        Hottub hottub = new Hottub();
+
+        LightOnCommand lightOnCommand = new LightOnCommand(light);
+        TVOnCommand tvOnCommand = new TVOnCommand(tv);
+        StereoOnWithCDCommand stereoOnWithCDCommand = new StereoOnWithCDCommand(stereo);
+        HottubOnCommand hottubOnCommand = new HottubOnCommand(hottub);
+
+        LightOffCommand lightOffCommand = new LightOffCommand(light);
+        TVOffCommand tvOffCommand = new TVOffCommand(tv);
+        StereoOffCommand stereoOffCommand = new StereoOffCommand(stereo);
+        HottubOffCommand hottubOffCommand = new HottubOffCommand(hottub);
+
+        Command[] partyOn = { lightOnCommand, stereoOnWithCDCommand, tvOnCommand, hottubOnCommand };
+        Command[] partyOff = { lightOffCommand, stereoOffCommand, tvOffCommand, hottubOffCommand };
+
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+
+        System.out.println(remoteControl);
+        System.out.println("------ Pushing Macro On ------");
+        remoteControl.onButtonWasPushed(0);
+        System.out.println("------ Pushing Macro Off ------");
+        remoteControl.offButtonWasPushed(0);
+
     }
 
 }
