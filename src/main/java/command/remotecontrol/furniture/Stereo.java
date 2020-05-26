@@ -8,22 +8,22 @@ package command.remotecontrol.furniture;
  */
 public class Stereo {
 
-    private String tag;
+    private String location;
 
-    public Stereo(String tag) {
-        this.tag = tag;
+    public Stereo(String location) {
+        this.location = location;
     }
 
     public void on() {
-        System.out.println(tag + "Stereo is on !!");
+        System.out.println(location + "Stereo is on !!");
     }
     public void setCD() {
-        System.out.println(tag + "Stereo set the CD !!");
+        System.out.println(location + "Stereo set the CD !!");
     }
     public void setVolum(int num) {
-        System.out.println(tag + "Stereo Volum set "+ num +"!!");
+        System.out.println(location + "Stereo Volum set "+ num +"!!");
     }
     public void off() {
-        System.out.println(tag + "Stereo is off !! ");
+        System.out.println(location + "Stereo is off !! ");
     }
 }

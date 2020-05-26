@@ -8,16 +8,16 @@ package command.remotecontrol.furniture;
  */
 public class Light {
 
-    private String tag;
+    private String location;
 
-    public Light(String tag) {
-        this.tag = tag;
+    public Light(String location) {
+        this.location = location;
     }
 
     public void on() {
-        System.out.println(tag + "Light is on !! ");
+        System.out.println(location + "Light is on !! ");
     }
     public void off() {
-        System.out.println(tag + "Light is off !! ");
+        System.out.println(location + "Light is off !! ");
     }
 }

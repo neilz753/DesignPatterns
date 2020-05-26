@@ -4,25 +4,24 @@ import command.remotecontrol.Command;
 import command.remotecontrol.furniture.CeilingFan;
 
 /**
+ * 吊扇速度控制命令模块
+ *
  * @author neilz
- * @create 2020/5/26 10:48
+ * @create 2020/5/26 14:21
  */
-public class CeilingFanOffCommand implements Command {
+public class CeilingFanHighCommand implements Command {
 
     CeilingFan ceilingFan;
     int prevSpeed;
 
-    public CeilingFanOffCommand(CeilingFan ceilingFan) {
+    public CeilingFanHighCommand(CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
     }
 
-    /**
-     * 在改变吊扇速度之前，将之前速度记录下来，以便需要撤销时使用。
-     */
     @Override
     public void execute() {
         prevSpeed = ceilingFan.getSpeed();
-        ceilingFan.off();
+        ceilingFan.high();
     }
 
     @Override

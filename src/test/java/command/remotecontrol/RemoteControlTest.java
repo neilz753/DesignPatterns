@@ -82,7 +82,6 @@ public class RemoteControlTest {
         remoteControl.offButtonWasPushed(3);
         remoteControl.onButtonWasPushed(4);
         remoteControl.offButtonWasPushed(4);
-
     }
 
     @Test
@@ -105,7 +104,37 @@ public class RemoteControlTest {
         remoteControl.onButtonWasPushed(0);
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
+    }
 
+    @Test
+    public void run_ceilingFanSpeedUndo() {
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+
+        CeilingFan ceilingFan = new CeilingFan("Living Room");
+
+        CeilingFanHighCommand ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        CeilingFanMediumCommand ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+        CeilingFanOffCommand ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+
+        remoteControl.setCommand(0, ceilingFanMediumCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(1, ceilingFanHighCommand, ceilingFanOffCommand);
+
+        /**
+         * 中速-->关闭
+         * 撤销回到中速
+         */
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
+
+        /**
+         * 开启高速
+         * 撤销回到中速
+         */
+        remoteControl.onButtonWasPushed(1);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
     }
 
 }

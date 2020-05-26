@@ -8,16 +8,16 @@ package command.remotecontrol.furniture;
  */
 public class GarageDoor {
 
-    private String tag;
+    private String location;
 
-    public GarageDoor(String tag) {
-        this.tag = tag;
+    public GarageDoor(String location) {
+        this.location = location;
     }
 
     public void open() {
-        System.out.println(tag + "Open the GarageDoor !!");
+        System.out.println(location + "Open the GarageDoor !!");
     }
     public void close() {
-        System.out.println(tag + "Close the GarageDoor !!");
+        System.out.println(location + "Close the GarageDoor !!");
     }
 }
