@@ -169,4 +169,26 @@ public class RemoteControlTest {
 
     }
 
+    /**
+     * Command 接口只有一个方法的情况下，利用lambda表达式，
+     * 在setCommand方法传参中用lambda表达式替换具体的Command对象，
+     * 省去各种Command类创建。
+     */
+    @Test
+    public void run_commandLambda() {
+        RemoteControlLambda remoteControl = new RemoteControlLambda();
+
+        Light light = new Light("Living Room");
+
+        remoteControl.setCommand(0, () -> {light.on();}, () -> {light.off();});
+        remoteControl.setCommand(1, light::on, light::off);
+
+        System.out.println(remoteControl);
+
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.onButtonWasPushed(1);
+        remoteControl.offButtonWasPushed(1);
+    }
+
 }
