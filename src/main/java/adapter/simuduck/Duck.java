@@ -1,4 +1,4 @@
-package adapterandfacade.simuduck;
+package adapter.simuduck;
 
 /**
  * 正常鸭子

@@ -1,4 +1,4 @@
-package adapterandfacade.scenario;
+package adapter.scenario;
 
 public interface Iterator {
     boolean hasNext();

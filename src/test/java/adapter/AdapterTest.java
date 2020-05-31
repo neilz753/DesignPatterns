@@ -1,9 +1,9 @@
 package adapter;
 
-import adapterandfacade.simuduck.Duck;
-import adapterandfacade.simuduck.impl.MallardDuck;
-import adapterandfacade.simuduck.impl.TurkeyAdapter;
-import adapterandfacade.simuduck.impl.WildTurkey;
+import adapter.simuduck.Duck;
+import adapter.simuduck.impl.MallardDuck;
+import adapter.simuduck.impl.TurkeyAdapter;
+import adapter.simuduck.impl.WildTurkey;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package adapterandfacade.simuduck;
+package adapter.simuduck;
 
 /**
  * 街头顽禽 火鸡

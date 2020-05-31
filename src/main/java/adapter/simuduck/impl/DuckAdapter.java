@@ -1,7 +1,7 @@
-package adapterandfacade.simuduck.impl;
+package adapter.simuduck.impl;
 
-import adapterandfacade.simuduck.Duck;
-import adapterandfacade.simuduck.Turkey;
+import adapter.simuduck.Duck;
+import adapter.simuduck.Turkey;
 
 import java.util.Random;
 

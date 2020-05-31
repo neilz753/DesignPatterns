@@ -1,6 +1,6 @@
-package adapterandfacade.simuduck.impl;
+package adapter.simuduck.impl;
 
-import adapterandfacade.simuduck.Duck;
+import adapter.simuduck.Duck;
 
 /**
  * 绿头鸭

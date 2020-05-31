@@ -22,7 +22,7 @@
 
 结构型设计模式主要解决“类或对象的组合或组装”问题。
 
-代理模式、桥接模式、[装饰者模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/decorator/装饰者模式.md)、[适配器模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/adapterandfacade/适配器和外观模式.md)、[门面模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/adapterandfacade/适配器和外观模式.md)、组合模式、享元模式
+代理模式、桥接模式、[装饰者模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/decorator/装饰者模式.md)、[适配器模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/adapter/适配器模式.md)、[门面模式](https://github.com/neilz753/DesignPatterns/blob/master/src/main/java/facade/外观模式.md)、组合模式、享元模式
 
 ## 行为型
 

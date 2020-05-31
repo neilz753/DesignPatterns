@@ -1,6 +1,6 @@
-package adapterandfacade.simuduck.impl;
+package adapter.simuduck.impl;
 
-import adapterandfacade.simuduck.Turkey;
+import adapter.simuduck.Turkey;
 
 /**
  * @author zhangn
